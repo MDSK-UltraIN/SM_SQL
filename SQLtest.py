@@ -8,7 +8,7 @@ server = 'smp.database.windows.net'
 database = 'SM'
 username = '{UN}'
 password = '{PW}'
-driver = '{ODBC Driver 13 for SQL Server}'
+driver = 'FreeTDS'
 Namevartest ='MSPVarTest'
 cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+password)
 cursor =cnxn.cursor()
