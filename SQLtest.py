@@ -8,7 +8,7 @@ server = 'smp.database.windows.net'
 database = 'SM'
 username = '{UN}'
 password = '{PW}'
-driver = 'FreeTDS'
+driver = '{ODBC Driver 13 for SQL Server}'
 Namevartest ='MSP_RPi_inserttest'
 cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+password)
 cnxn.autocommit = True
