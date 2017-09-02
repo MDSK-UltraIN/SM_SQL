@@ -9,11 +9,12 @@ database = 'SM'
 username = '{UN}'
 password = '{PW}'
 driver = 'FreeTDS'
-Namevartest ='MSPVarTest'
+Namevartest ='MSP_RPi_inserttest'
 cnxn = pyodbc.connect('DRIVER='+driver+';PORT=1433;SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+password)
+cnxn.autocommit = True
 cursor =cnxn.cursor()
-#cursor.execute("INSERT INTO [dbo].[test]([faceID],[userName],[dateregis]) VALUES ('test777-666-77777888',"+repr(Namevartest)+",CONVERT(DATETIME,SYSDATETIMEOFFSET() AT TIME ZONE 'China Standard Time'))") #寫入資料
-
+SQLCommand = "INSERT INTO [dbo].[test]([faceID],[userName],[dateregis]) VALUES ('test777-666-1859"+repr(random.randint(0,999))+"',"+repr(Namevartest)+",CONVERT(DATETIME,SYSDATETIMEOFFSET() AT TIME ZONE 'China Standard Time'))" #中間隨機產生數字
+cursor.execute(SQLCommand)
 cursor.execute("select * from [dbo].[test]")
 
 
@@ -23,12 +24,6 @@ while row:
     print(str(row[0])+" "+str(row[1])+" "+str(row[2]))
     row = cursor.fetchone()
 
-    
-
-
-
-
-# In[ ]:
 
 
 
