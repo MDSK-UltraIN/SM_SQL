@@ -5,14 +5,10 @@ server = 'smp.database.windows.net'
 user = 'USER'
 password = 'PASSWORD'
 database = 'SM'
-
-
-
-
 cnsn = pyodbc.connect('DSN=%s;UID=%s;PWD=%s;DATABASE=%s;'%(dsn,user,password,database))
 cursor = cnsn.cursor()
 
-
+######Command######
 Person_ID = 'p38amucp8um4' #ID從這裡改
 Person_Name = 'Person名字'#name從這裡改
 
